@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="ArslanFarrukh_HeroBannerSlider::menu"
+             title="Hero Banner Slider"
+             module="ArslanFarrukh_HeroBannerSlider"
+             sortOrder="10"
+             resource="ArslanFarrukh_HeroBannerSlider::manage"
+             parent="ArslanFarrukh_Core::arslan"
+        />
+        <add id="ArslanFarrukh_HeroBannerSlider::manage"
+             title="Manage Banner Sliders"
+             module="ArslanFarrukh_HeroBannerSlider"
+             sortOrder="20"
+             action="arslan_herobanner/index/index"
+             resource="ArslanFarrukh_HeroBannerSlider::manage"
+             parent="ArslanFarrukh_HeroBannerSlider::menu"
+        />
+        <add id="ArslanFarrukh_HeroBannerSlider::config"
+             title="Banner Slider Configuration"
+             module="ArslanFarrukh_HeroBannerSlider"
+             sortOrder="30"
+             action="admin/system_config/edit/section/arslan_herobannerslider/"
+             resource="ArslanFarrukh_HeroBannerSlider::config"
+             parent="ArslanFarrukh_HeroBannerSlider::menu"
+        />
+    </menu>
+</config>

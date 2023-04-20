@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="ArslanFarrukhHeroBannerImageUploader" type="ArslanFarrukh\HeroBannerSlider\Model\Uploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="const">ArslanFarrukh\HeroBannerSlider\Model\HeroBanner\DataProvider::FILE_TMP_PATH</argument>
+            <argument name="basePath" xsi:type="const">ArslanFarrukh\HeroBannerSlider\Model\HeroBanner\DataProvider::FILE_PATH</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="ArslanFarrukh\HeroBannerSlider\Controller\Adminhtml\Index\Upload">
+        <arguments>
+            <argument name="uploader" xsi:type="object">ArslanFarrukhHeroBannerImageUploader</argument>
+        </arguments>
+    </type>
+    <virtualType name="ArslanFarrukhHeroBannerVideoUploader" type="ArslanFarrukh\HeroBannerSlider\Model\Uploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="const">ArslanFarrukh\HeroBannerSlider\Model\HeroBanner\DataProvider::FILE_TMP_PATH</argument>
+            <argument name="basePath" xsi:type="const">ArslanFarrukh\HeroBannerSlider\Model\HeroBanner\DataProvider::FILE_PATH</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="mp4" xsi:type="string">mp4</item>
+                <item name="mov" xsi:type="string">mov</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="ArslanFarrukh\HeroBannerSlider\Controller\Adminhtml\Index\VideoUpload">
+        <arguments>
+            <argument name="uploader" xsi:type="object">ArslanFarrukhHeroBannerVideoUploader</argument>
+        </arguments>
+    </type>
+    <virtualType name="ArslanFarrukhHeroBannerFileUploader" type="ArslanFarrukh\HeroBannerSlider\Model\Uploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="const">ArslanFarrukh\HeroBannerSlider\Model\HeroBanner\DataProvider::FILE_TMP_PATH</argument>
+            <argument name="basePath" xsi:type="const">ArslanFarrukh\HeroBannerSlider\Model\HeroBanner\DataProvider::FILE_PATH</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+                <item name="mp4" xsi:type="string">mp4</item>
+                <item name="mov" xsi:type="string">mov</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="ArslanFarrukh\HeroBannerSlider\Controller\Adminhtml\Index\Save">
+        <arguments>
+            <argument name="uploader" xsi:type="object">ArslanFarrukhHeroBannerFileUploader</argument>
+        </arguments>
+    </type>
+    <type name="ArslanFarrukh\HeroBannerSlider\Model\HeroBanner\DataProvider">
+        <arguments>
+            <argument name="uploader" xsi:type="object">ArslanFarrukhHeroBannerFileUploader</argument>
+        </arguments>
+    </type>
+</config>
