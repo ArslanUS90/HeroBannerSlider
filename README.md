@@ -39,6 +39,4 @@ php bin/magento setup:di:compile
 
 
 
-#####This extension is compatible with all the versions of Magento 2.3.* and 2.4.*.
-###Tested on following instances:
-#####multiple instances i.e. 2.3.7-p3 and 2.4.5-p1
+
